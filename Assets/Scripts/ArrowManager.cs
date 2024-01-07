@@ -17,4 +17,11 @@ public class ArrowManager : MonoBehaviour
     {
         transform.Translate(speed * dir * Time.deltaTime);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.Equals("Hand"))
+        {
+            GameManager.instance.KillPlayer();
+        }
+    }
 }
